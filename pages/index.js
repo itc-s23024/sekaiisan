@@ -1,4 +1,9 @@
 const Seiza = ({ content }) => {
+  // 昇順にランキングを表示するために、ランキングをスコアの昇順にソートする
+  const sortedRanking = content.horoscope['2024/03/content'].sort(
+    (a, b) => a.rank - b.rank
+  )
+
   return (
     <>
       <h1>本日の星座占い</h1>
