@@ -2,9 +2,13 @@ const Seiza = ({ content }) => {
   return (
     <>
       <h1>本日の星座占い</h1>
-      <p>{content.horoscope['2024/03/content'][0].sign}</p>
-      <p>{content.horoscope['2024/03/content'][0].item}</p>
-      <p>{content.horoscope['2024/03/content'][0].content}</p>
+      {content.horoscope['2024/03/content'].map((horoscope, index) => (
+        <div key={index}>
+          <p>{horoscope.sign}</p>
+          <p>本日のラッキーアイテムは{horoscope.item}</p>
+          <p>{horoscope.content}</p>
+        </div>
+      ))}
     </>
   )
 }
